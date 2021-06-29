@@ -45,7 +45,7 @@ app.get('/api/articulos/:id', (req,res)=>{
     })
 })
 //Crear un artículo
-app.post('/api/articulos', (req,res)=>{
+app.post('../api/articulos', (req,res)=>{
     let data = {descripcion:req.body.descripcion, precio:req.body.precio, stock:req.body.stock}
     let sql = "INSERT INTO articulos SET ?"
     conexion.query(sql, data, function(err, result){
@@ -59,7 +59,7 @@ app.post('/api/articulos', (req,res)=>{
     })
 })
 //Editar articulo
-app.put('/api/articulos/:id', (req, res)=>{
+app.put('../api/articulos/:id', (req, res)=>{
     let id = req.params.id
     let descripcion = req.body.descripcion
     let precio = req.body.precio
@@ -74,7 +74,7 @@ app.put('/api/articulos/:id', (req, res)=>{
     })
 })
 //Eliminar articulo
-app.delete('/api/articulos/:id', (req,res)=>{
+app.delete('../api/articulos/:id', (req,res)=>{
     conexion.query('DELETE FROM articulos WHERE id = ?', [req.params.id], function(error, filas){
         if(error){
             throw error

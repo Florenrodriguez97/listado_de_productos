@@ -1,5 +1,5 @@
 //Definición de variables
-const url = 'http://localhost:3000/api/articulos/'
+const url = 'https://listadoproductos10.netlify.app/'
 const contenedor = document.querySelector('tbody')
 let resultados = ''
 
